@@ -79,13 +79,14 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toUpperCase().contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
 
         return jobs;
     }
+
 
     /**
      * Search all columns for the given term
@@ -105,17 +106,13 @@ public class JobData {
         for (HashMap<String, String> job : allJobs) {
             for (String column : job.keySet()){
                 String aValue = job.get(column);
-                if (aValue.toLowerCase().contains(value.toLowerCase())){
+                if (aValue.toUpperCase().contains(value.toUpperCase())){
                     jobs.add(job);
                 }
             }
         }
         return jobs;
     }
-
-
-
-
 
 
     /**
